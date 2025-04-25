@@ -213,7 +213,7 @@ class SegmentedButton(ConstrainedControl):
             self.allow_empty_selection or len(self.selected) > 0
         ), "allow_empty_selection must be True for selected to be empty"
         assert (
-            len(self.selected) < 2 or self.allow_multiple_selection
+            not self.selected or len(self.selected) < 2 or self.allow_multiple_selection
         ), "allow_multiple_selection must be True for selected to have more than one item"
         style = self.__style or ButtonStyle()
         style.side = self._wrap_attr_dict(style.side)
