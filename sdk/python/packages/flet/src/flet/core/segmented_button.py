@@ -210,7 +210,7 @@ class SegmentedButton(ConstrainedControl):
             segment.visible for segment in self.__segments
         ), "segments must have at minimum one visible Segment"
         assert (
-            len(self.selected) > 0 or self.allow_empty_selection
+            self.allow_empty_selection or len(self.selected) > 0
         ), "allow_empty_selection must be True for selected to be empty"
         assert (
             len(self.selected) < 2 or self.allow_multiple_selection
